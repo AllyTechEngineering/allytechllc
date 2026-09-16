@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'adapt_nav.dart';
 import 'custom_app_bar.dart';
 
@@ -6,22 +8,27 @@ class AdaptiveScaffold extends StatelessWidget {
   const AdaptiveScaffold({
     super.key,
     required this.title,
-    required this.selectedIndex,
-    required this.onDestinationSelected,
-    required this.body,
+    required this.navigationShell,
   });
 
   final String title;
-  final int selectedIndex;
-  final ValueChanged<int> onDestinationSelected;
-  final Widget body;
+  final StatefulNavigationShell navigationShell;
+
+  void _onDestinationSelected(int index) {
+    // initialLocation: true re-navigates to that branch's root if the user
+    // taps the already-selected destination (matches standard shell-route behavior).
+    navigationShell.goBranch(
+      index,
+      initialLocation: index == navigationShell.currentIndex,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final isWide = AdaptiveNavigation.isWideLayout(context);
     final nav = AdaptiveNavigation(
-      selectedIndex: selectedIndex,
-      onDestinationSelected: onDestinationSelected,
+      selectedIndex: navigationShell.currentIndex,
+      onDestinationSelected: _onDestinationSelected,
     );
 
     return Scaffold(
@@ -32,10 +39,10 @@ class AdaptiveScaffold extends StatelessWidget {
               children: [
                 nav,
                 const VerticalDivider(width: 1),
-                Expanded(child: body),
+                Expanded(child: navigationShell),
               ],
             )
-          : body,
+          : navigationShell,
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:allytechllc/utils/custom_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
+import 'routing/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,35 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'AllyTech LLC',
       theme: CustomAppTheme.appTheme,
-      home: const HomeScreen(),
-    );
-  }
-}
-
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: const Text('AllyTech LLC'),
-      ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.all(24.0),
-          child: Text(
-            'Home Screen — placeholder content',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
+      routerConfig: appRouter,
     );
   }
 }
