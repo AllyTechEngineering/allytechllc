@@ -16,18 +16,8 @@ class CustomAppTheme {
     fontFamilyFallback: ['NotoSansSymbols'],
     colorScheme: appColorScheme,
     textTheme: customTextTheme,
-    scaffoldBackgroundColor: appColorScheme.tertiaryFixed,
-    // textButtonTheme: TextButtonThemeData(
-    //   style: TextButton.styleFrom(
-    //     padding: EdgeInsets.all(8.0),
-    //     backgroundColor: Colors.white70,
-    //     shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(8.0),
-    //       side: BorderSide(color: Colors.black, width: 1.0),
-    //     ),
-    //   ),
-    // ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
+scaffoldBackgroundColor: appColorScheme.tertiaryFixed,
+elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         // shadowColor: Colors.black,
         // foregroundColor: Colors.black,
@@ -41,7 +31,27 @@ class CustomAppTheme {
         // ),
       ),
     ),
-
+navigationRailTheme: NavigationRailThemeData(
+      backgroundColor: Colors.transparent,
+      indicatorColor: appColorScheme.tertiary,
+      indicatorShape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      selectedIconTheme: IconThemeData(
+        color: appColorScheme.primary,
+        size: 30,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: appColorScheme.secondary,
+        size: 24,
+      ),
+      selectedLabelTextStyle: customTextTheme.labelLarge?.copyWith(
+        color: appColorScheme.primary,
+      ),
+      unselectedLabelTextStyle: customTextTheme.labelMedium?.copyWith(
+        color: appColorScheme.secondary,
+      ),
+    ),
     // AppBar Theme
     appBarTheme: AppBarTheme(
       // backgroundColor: appColorScheme.primary,
@@ -137,23 +147,23 @@ class CustomAppTheme {
       headerHelpStyle: customTextTheme.bodySmall,
       headerHeadlineStyle: customTextTheme.bodySmall,
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      elevation: 4,
-      backgroundColor: Colors.transparent,
-      selectedItemColor: Color(0xFF1976D2),
-      unselectedItemColor: Color(0xFF79B3ED),
-      selectedIconTheme: const IconThemeData(
-        size: 30,
-        color: Color(0xFF1976D2),
-      ),
-      unselectedIconTheme: const IconThemeData(
-        size: 30,
-        color: Color(0xFF79B3ED),
-      ),
-      selectedLabelStyle: customTextTheme.labelSmall,
-      unselectedLabelStyle: customTextTheme.labelSmall,
-      type: BottomNavigationBarType.fixed,
-    ),
+    // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    //   elevation: 4,
+    //   backgroundColor: Colors.transparent,
+    //   selectedItemColor: Color(0xFF1976D2),
+    //   unselectedItemColor: Color(0xFF79B3ED),
+    //   selectedIconTheme: const IconThemeData(
+    //     size: 30,
+    //     color: Color(0xFF1976D2),
+    //   ),
+    //   unselectedIconTheme: const IconThemeData(
+    //     size: 30,
+    //     color: Color(0xFF79B3ED),
+    //   ),
+    //   selectedLabelStyle: customTextTheme.labelSmall,
+    //   unselectedLabelStyle: customTextTheme.labelSmall,
+    //   type: BottomNavigationBarType.fixed,
+    // ),
     drawerTheme: DrawerThemeData(
       elevation: 8,
       shadowColor: Colors.black,
