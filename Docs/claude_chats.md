@@ -81,3 +81,53 @@ Not yet done
 •	Write real Firestore security rules (currently just the temporary open test rule)
 •	Design and build actual landing page content — still running the Firestore Connectivity Test placeholder page, not real site content (portfolio/projects showcase, contact info, etc.)
 
+## Designing the site UI
+```markdown
+# AllyTech LLC — Flutter PWA Website: Session Summary
+
+## Project Status
+- **Stack:** Flutter PWA + Firebase Hosting + Firestore
+- **Live site:** https://allytechllc-website.web.app
+- **Custom domain:** allytechllc.com — connected and confirmed successful in Firebase Hosting
+- **Repo:** github.com/AllyTechEngineering/allytechllc
+
+## Packages Decided
+- `provider` — state management (per arch.md)
+- `go_router` — routing (URL-based, PWA-appropriate over plain Navigator or auto_route)
+- `url_launcher` — outbound links/email (stable on v6.x, no pending breaking changes)
+- `google_fonts` — already in use in `custom_app_theme.dart`
+- Explicitly skipped: `cached_network_image` (local assets only for now)
+
+## Utility Widgets Built
+| File | Path | Purpose |
+|---|---|---|
+| `custom_app_bar.dart` | `lib/widgets/` | Shared AppBar, avoids per-screen duplication |
+| `adaptive_navigation.dart` | `lib/widgets/` | Drawer (mobile) / NavigationRail (≥600px), driven by `MediaQuery` width per Material 3 guidance |
+| `adaptive_scaffold.dart` | `lib/widgets/` | Composes CustomAppBar + AdaptiveNavigation + body into one reusable shell |
+| `constants.dart` | `lib/utils/` | Cleaned up — removed leftover PWM/sensor/Consul-app constants; kept only `kAppTitle` and `kIconThemeIconSize` |
+
+## Theme Fixes (to apply manually in `custom_app_theme.dart`)
+1. **Add `navigationRailTheme`** — new block using existing 4-color palette (primary=selected, secondary=unselected, tertiary=indicator). Snippet provided.
+2. **Delete dead `bottomNavigationBarTheme`** — commented-out block, no longer used since Drawer+Rail was chosen over BottomNavigationBar+Rail.
+3. **Fix `primaryContainer`** — was hardcoded `Color(0xFFF4ECF8)` ("light pink"), off the documented sea palette. Changed to `appColorScheme.tertiary`.
+
+## Reviewed Files (from lib/utils/)
+- `custom_app_theme.dart` — solid, Material 3, no leftover-app contamination (aside from the two fixes above)
+- `custom_decorations.dart` — clean, minor inconsistency in gradient `begin`/`end` flexibility, noted but not fixed
+- `contants.dart` → renamed to `constants.dart`, cleaned as above
+
+## Established Build Sequence (per your direction)
+1. ~~Packages~~ ✅
+2. ~~Utility widgets~~ ✅
+3. **Generic screens** ← next (Services, Projects, About, Privacy — Home already exists)
+4. Routing (wire `go_router` + `onDestinationSelected` callbacks)
+
+## Environment Notes
+- Debugging: `flutter run -d windows` works around the persistent Chrome/web-server debug-mode file-lock bug
+- Build/deploy: `flutter build web` then `firebase deploy --only hosting`
+- Firestore configured for both `web` and `windows` via `flutterfire configure`
+
+## Outstanding / Unresolved
+- **GitHub → Claude sync:** Not working in this chat across three different UI paths tried (Project-level "Add content from GitHub," chat-level "Add repository," Settings→Connectors). Direct file upload to chat is the only confirmed-reliable method for getting me current repo content.
+- Theme fixes above are written out but not yet applied by you to the actual file.
+```
