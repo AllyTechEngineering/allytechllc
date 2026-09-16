@@ -35,6 +35,9 @@ https://github.com/flutter/website/tree/main/sites/docs/src/content/ui/adaptive-
 Material Design tabs and/or a drawer
 Use routes if this is the best way to handle PWA navigation
 
+## UI Navigation
+Material 3, Navigation Bar (bottom) and Navigation Drawer, Left Pane
+
 ## State Management
 Provider https://pub.dev/packages/provider
 https://github.com/rrousselGit/provider
