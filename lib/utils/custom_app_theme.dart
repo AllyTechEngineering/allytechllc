@@ -318,7 +318,7 @@ navigationRailTheme: NavigationRailThemeData(
     onPrimary: Colors.white,
     onPrimaryFixed: Color(0xFF6990B1),
     onSecondaryContainer: Color(0xFFDDE5EC),
-    primaryContainer: Color(0xFFF4ECF8), // light pink
+    primaryContainer: appColorScheme.tertiary,
     onPrimaryFixedVariant: Color(0xFF0C640E),
     secondary: const Color(0xFF497D74), //green blue
     onSecondary: Colors.white,
