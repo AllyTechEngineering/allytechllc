@@ -5,4 +5,5 @@ class Constants {
 
   // Icon sizing — referenced by CustomAppTheme.iconTheme
   static const double kIconThemeIconSize = 24.0;
+  static const double kToolbarHeight = 56.0;
 }

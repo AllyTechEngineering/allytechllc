@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'adaptive_navigation.dart';
+import 'adapt_nav.dart';
 import 'custom_app_bar.dart';
 
 class AdaptiveScaffold extends StatelessWidget {
@@ -25,7 +25,7 @@ class AdaptiveScaffold extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: CustomAppBar(title: title),
+      appBar: CustomAppBar(title: title, getToolBarHeight: kToolbarHeight),
       drawer: isWide ? null : nav,
       body: isWide
           ? Row(
