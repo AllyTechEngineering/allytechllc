@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'contants.dart';
+import 'constants.dart';
 
 /// Custom Theme for the app
 /// Color Palette: https://colorhunt.co/palette/f8fafcd9eafdbcccdc9aa6b2
