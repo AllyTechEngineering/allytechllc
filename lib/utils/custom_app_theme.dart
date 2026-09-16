@@ -318,7 +318,7 @@ navigationRailTheme: NavigationRailThemeData(
     onPrimary: Colors.white,
     onPrimaryFixed: Color(0xFF6990B1),
     onSecondaryContainer: Color(0xFFDDE5EC),
-    primaryContainer: appColorScheme.tertiary,
+    primaryContainer: const Color(0xFFEFE9D5), // same value as tertiary, set directly to avoid self-reference
     onPrimaryFixedVariant: Color(0xFF0C640E),
     secondary: const Color(0xFF497D74), //green blue
     onSecondary: Colors.white,
