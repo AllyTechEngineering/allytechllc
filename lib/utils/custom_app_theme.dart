@@ -177,11 +177,10 @@ navigationRailTheme: NavigationRailThemeData(
       ),
     ),
     cardTheme: CardThemeData(
-      // elevation: 4,
-      // shadowColor: Colors.black,
+       elevation: 4,
+       shadowColor: Colors.black38,
       shape: RoundedRectangleBorder(
-        // side: const BorderSide(width: 0.1),
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(16.0),
       ),
     ),
     dialogTheme: DialogThemeData(
