@@ -82,7 +82,7 @@ Not yet done
 •	Design and build actual landing page content — still running the Firestore Connectivity Test placeholder page, not real site content (portfolio/projects showcase, contact info, etc.)
 
 ## Designing the site UI
-```markdown
+
 # AllyTech LLC — Flutter PWA Website: Session Summary
 
 ## Project Status
@@ -130,4 +130,12 @@ Not yet done
 ## Outstanding / Unresolved
 - **GitHub → Claude sync:** Not working in this chat across three different UI paths tried (Project-level "Add content from GitHub," chat-level "Add repository," Settings→Connectors). Direct file upload to chat is the only confirmed-reliable method for getting me current repo content.
 - Theme fixes above are written out but not yet applied by you to the actual file.
-```
+
+ChatGPT Chat 1
+## Windows Impeller Issue
+
+Flutter Windows rendering currently encounters repeated EGL context-loss errors while resizing the application window with Impeller enabled:
+
+```text
+EGL Error: Context Lost (12302)
+Could not make the context current to acquire the frame.
