@@ -7,11 +7,13 @@ class PortfolioCard extends StatefulWidget {
     required this.actionText,
     required this.onTap,
     this.imagePath,
+    this.description,
     this.imageFit = BoxFit.cover,
   });
 
   final String title;
   final String actionText;
+  final String? description;
   final VoidCallback onTap;
 
   /// Optional local asset image.
@@ -38,8 +40,9 @@ class _PortfolioCardState extends State<PortfolioCard> {
     final defaultElevation = theme.cardTheme.elevation ?? 4.0;
 
     // Portfolio cards rise slightly on desktop/web hover.
-    final targetElevation =
-        _isHovered ? defaultElevation + 4.0 : defaultElevation;
+    final targetElevation = _isHovered
+        ? defaultElevation + 4.0
+        : defaultElevation;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -54,10 +57,7 @@ class _PortfolioCardState extends State<PortfolioCard> {
         });
       },
       child: TweenAnimationBuilder<double>(
-        tween: Tween<double>(
-          begin: defaultElevation,
-          end: targetElevation,
-        ),
+        tween: Tween<double>(begin: defaultElevation, end: targetElevation),
         duration: const Duration(milliseconds: 150),
         curve: Curves.easeOut,
         builder: (context, elevation, child) {
@@ -78,15 +78,10 @@ class _PortfolioCardState extends State<PortfolioCard> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: _buildImage(theme),
-                  ),
+                  AspectRatio(aspectRatio: 16 / 9, child: _buildImage(theme)),
 
                   ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minHeight: 92,
-                    ),
+                    constraints: const BoxConstraints(minHeight: 92),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -99,14 +94,22 @@ class _PortfolioCardState extends State<PortfolioCard> {
                           ),
 
                           const SizedBox(height: 8),
-
+                          if (widget.description != null &&
+                              widget.description!.isNotEmpty) ...[
+                            Text(
+                              widget.description!,
+                              style: theme.textTheme.bodyMedium,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            const SizedBox(height: 12),
+                          ],
                           Row(
                             children: [
                               Expanded(
                                 child: Text(
                                   widget.actionText,
-                                  style:
-                                      theme.textTheme.labelLarge?.copyWith(
+                                  style: theme.textTheme.labelLarge?.copyWith(
                                     color: theme.colorScheme.primary,
                                   ),
                                 ),

@@ -19,6 +19,9 @@ class ServiceDetailScreen extends StatelessWidget {
       title: item.title,
       backRoute: '/services',
       backLabel: 'Back to Services',
+      summary: item.summary,
+      imagePath: item.imagePath,
+      imageDescription: item.imageDescription,
     );
   }
 }

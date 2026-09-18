@@ -19,6 +19,9 @@ class ProjectDetailScreen extends StatelessWidget {
       title: item.title,
       backRoute: '/projects',
       backLabel: 'Back to Projects',
+      summary: item.summary,
+      imagePath: item.imagePath,
+      imageDescription: item.imageDescription,
     );
   }
 }

@@ -10,11 +10,13 @@ class SiteCardGrid extends StatelessWidget {
     required this.title,
     required this.items,
     required this.routePrefix,
+    this.showSummary = false,
   });
 
   final String title;
   final List<NavItem> items;
   final String routePrefix;
+  final bool showSummary;
 
   static const double _maxContentWidth = 1280;
   static const double _cardSpacing = 24;
@@ -69,6 +71,8 @@ class SiteCardGrid extends StatelessWidget {
                           child: PortfolioCard(
                             title: item.title,
                             actionText: 'Explore ${item.title}',
+                            description: showSummary ? item.summary : null,
+                            imagePath: item.imagePath,
                             onTap: () => context.go(
                               item.route ?? '$routePrefix/${item.slug}',
                             ),

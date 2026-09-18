@@ -8,8 +8,9 @@ class ProjectsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const SiteCardGrid(
-        title: 'Projects',
-        items: projectItems,
-        routePrefix: '/projects',
-      );
+    title: 'Projects',
+    items: projectItems,
+    routePrefix: '/projects',
+    showSummary: true,
+  );
 }
