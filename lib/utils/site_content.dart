@@ -33,7 +33,7 @@ const List<NavItem> projectItems = [
   NavItem(slug: 'proofing-ovens', title: 'Proofing Ovens', summary: 'Custom proofing ovens for bakery and food processing applications.'),
   NavItem(slug: 'embedded-linux', title: 'Embedded Linux', summary: 'Linux-based embedded systems for various applications.'),
   NavItem(slug: 'iot', title: 'IoT', summary: 'Internet of Things solutions for smart connectivity.'),
-  NavItem(slug: 'rfid', title: 'RFID', summary: 'Radio Frequency Identification solutions for asset tracking.'),
+  NavItem(slug: 'rfid', title: 'RFID', summary: 'Radio Frequency Identification solutions for asset tracking.',imagePath:'assets/images/projects/rfid_hen_mat.webp', imageDescription: 'RFID leg band & RFID mat tracking poultry.'),
   NavItem(slug: 'apps', title: 'Apps', summary: 'Custom mobile and web applications for businesses.'),
   NavItem(slug: 'other', title: 'Other', summary: 'Other technology projects and initiatives.'),
 ];
