@@ -9,7 +9,10 @@
             "name": "allytechllc (debug mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "debug"
+            "flutterMode": "debug",
+            "deviceId": "windows",
+            "toolArgs": ["--no-enable-impeller"]
+
         },
         {
             "name": "allytechllc (profile mode)",

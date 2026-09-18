@@ -16,7 +16,7 @@ final GoRouter appRouter = GoRouter(
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return AdaptiveScaffold(
-          title: 'AllyTech LLC',
+          title: 'Taylor Consulting',
           navigationShell: navigationShell,
         );
       },
