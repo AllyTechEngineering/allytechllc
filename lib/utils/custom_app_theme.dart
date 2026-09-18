@@ -258,10 +258,10 @@ navigationRailTheme: NavigationRailThemeData(
     //Paragraphs of readable body text
     bodyLarge: GoogleFonts.lato(
       fontSize: 16.0,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.normal,
       color: appColorScheme.onSurface,
       wordSpacing: 0.0,
-      height: 1.2,
+      height: 1.4,
     ),
     // Smaller body text
     bodyMedium: GoogleFonts.lato(

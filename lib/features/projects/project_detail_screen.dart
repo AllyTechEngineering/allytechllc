@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/site_content.dart';
+import '../../widgets/site_detail_page.dart';
 
 class ProjectDetailScreen extends StatelessWidget {
-  const ProjectDetailScreen({super.key, required this.slug});
+  const ProjectDetailScreen({
+    super.key,
+    required this.slug,
+  });
 
   final String slug;
 
   @override
   Widget build(BuildContext context) {
-    final item = projectItems.firstWhere((i) => i.slug == slug);
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(item.title, style: Theme.of(context).textTheme.displayMedium),
-          const SizedBox(height: 16),
-          // TODO: replace with real case-study copy/images for this project.
-          const Text('Content coming soon.'),
-        ],
-      ),
+    final item = projectItems.firstWhere((item) => item.slug == slug);
+
+    return SiteDetailPage(
+      title: item.title,
+      backRoute: '/projects',
+      backLabel: 'Back to Projects',
     );
   }
 }

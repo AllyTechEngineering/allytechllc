@@ -1,19 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+class DetailSection {
+  const DetailSection({
+    required this.heading,
+    required this.content,
+  });
+
+  final String heading;
+  final String content;
+}
 
 class SiteDetailPage extends StatelessWidget {
   const SiteDetailPage({
     super.key,
     required this.title,
+    this.backRoute,
+    this.backLabel,
+    this.summary,
     this.imagePath,
     this.imageFit = BoxFit.cover,
     this.imageDescription,
+    this.sections = const [],
     this.body,
   });
 
   final String title;
+  final String? backRoute;
+  final String? backLabel;
+  final String? summary;
   final String? imagePath;
   final BoxFit imageFit;
   final String? imageDescription;
+  final List<DetailSection> sections;
   final Widget? body;
 
   @override
@@ -38,10 +57,30 @@ class SiteDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (backRoute != null) ...[
+                TextButton.icon(
+                  onPressed: () => context.go(backRoute!),
+                  icon: const Icon(Icons.arrow_back),
+                  label: Text(backLabel ?? 'Back'),
+                ),
+                const SizedBox(height: 16),
+              ],
+
               Text(title, style: theme.textTheme.displayMedium),
 
+              if (summary != null) ...[
+                const SizedBox(height: 16),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 760),
+                  child: Text(
+                    summary!,
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                ),
+              ],
+
               if (imagePath != null) ...[
-                const SizedBox(height: 24),
+                const SizedBox(height: 32),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: AspectRatio(
@@ -56,13 +95,38 @@ class SiteDetailPage extends StatelessWidget {
                 ),
               ],
 
+              const SizedBox(height: 32),
+              Divider(color: theme.colorScheme.outlineVariant),
               const SizedBox(height: 24),
 
-              body ??
-                  Text(
-                    'Content coming soon.',
-                    style: theme.textTheme.bodyLarge,
+              if (sections.isEmpty && body == null)
+                Text(
+                  'Content coming soon.',
+                  style: theme.textTheme.bodyLarge,
+                ),
+
+              for (final section in sections) ...[
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 760),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        section.heading,
+                        style: theme.textTheme.headlineSmall,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        section.content,
+                        style: theme.textTheme.bodyLarge,
+                      ),
+                    ],
                   ),
+                ),
+                const SizedBox(height: 32),
+              ],
+
+              if (body != null) body!,
             ],
           ),
         ),
