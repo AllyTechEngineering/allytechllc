@@ -28,6 +28,8 @@ const List<NavItem> featuredItems = [
     slug: 'rfid',
     title: 'RFID',
     route: '/projects/rfid',
+    cardDescription: 'RFID Solutions for Agriculture',
+    cardImagePath: 'assets/images/projects/rfid_hen_mat.webp',
   ),
   NavItem(
     slug: 'project-management',

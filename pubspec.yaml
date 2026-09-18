@@ -71,6 +71,7 @@ flutter:
   assets:
      - assets/images/blue_sky_background_app_bar.png
      - assets/images/projects/rfid_hen_mat.webp
+     - assets/images/projects/sailing_race_computer.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

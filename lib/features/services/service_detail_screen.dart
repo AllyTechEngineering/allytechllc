@@ -4,10 +4,7 @@ import '../../utils/site_content.dart';
 import '../../widgets/site_detail_page.dart';
 
 class ServiceDetailScreen extends StatelessWidget {
-  const ServiceDetailScreen({
-    super.key,
-    required this.slug,
-  });
+  const ServiceDetailScreen({super.key, required this.slug});
 
   final String slug;
 
@@ -22,6 +19,12 @@ class ServiceDetailScreen extends StatelessWidget {
       summary: item.summary,
       imagePath: item.imagePath,
       imageDescription: item.imageDescription,
+      body: item.detailParagraph == null
+          ? null
+          : Text(
+              item.detailParagraph!,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
     );
   }
 }
