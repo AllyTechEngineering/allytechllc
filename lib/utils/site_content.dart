@@ -3,9 +3,10 @@
 // slug and title can never drift out of sync between files.
 
 class NavItem {
-  const NavItem({required this.slug, required this.title});
+  const NavItem({required this.slug, required this.title, this.route,});
   final String slug;
   final String title;
+  final String? route;
 }
 
 const List<NavItem> serviceItems = [

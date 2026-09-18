@@ -15,11 +15,9 @@ class AdaptiveScaffold extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
 
   void _onDestinationSelected(int index) {
-    // initialLocation: true re-navigates to that branch's root if the user
-    // taps the already-selected destination (matches standard shell-route behavior).
     navigationShell.goBranch(
       index,
-      initialLocation: index == navigationShell.currentIndex,
+      initialLocation: true,
     );
   }
 

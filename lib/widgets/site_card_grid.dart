@@ -48,15 +48,15 @@ class SiteCardGrid extends StatelessWidget {
                 builder: (context, constraints) {
                   final availableWidth = constraints.maxWidth;
 
-                  final columnCount = ((availableWidth + _cardSpacing) /
-                          (_minimumCardWidth + _cardSpacing))
-                      .floor()
-                      .clamp(1, 4)
-                      .toInt();
+                  final columnCount =
+                      ((availableWidth + _cardSpacing) /
+                              (_minimumCardWidth + _cardSpacing))
+                          .floor()
+                          .clamp(1, 4)
+                          .toInt();
 
                   final cardWidth =
-                      (availableWidth -
-                          _cardSpacing * (columnCount - 1)) /
+                      (availableWidth - _cardSpacing * (columnCount - 1)) /
                       columnCount;
 
                   return Wrap(
@@ -69,8 +69,9 @@ class SiteCardGrid extends StatelessWidget {
                           child: PortfolioCard(
                             title: item.title,
                             actionText: 'Explore ${item.title}',
-                            onTap: () =>
-                                context.go('$routePrefix/${item.slug}'),
+                            onTap: () => context.go(
+                              item.route ?? '$routePrefix/${item.slug}',
+                            ),
                           ),
                         ),
                     ],
