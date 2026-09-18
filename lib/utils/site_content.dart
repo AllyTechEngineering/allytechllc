@@ -10,6 +10,8 @@ class NavItem {
     this.summary,
     this.imagePath,
     this.imageDescription,
+    this.cardDescription,
+    this.cardImagePath,
   });
 
   final String slug;
@@ -18,6 +20,8 @@ class NavItem {
   final String? summary;
   final String? imagePath;
   final String? imageDescription;
+  final String? cardDescription;
+  final String? cardImagePath;
 }
 
 const List<NavItem> serviceItems = [
@@ -33,7 +37,7 @@ const List<NavItem> projectItems = [
   NavItem(slug: 'proofing-ovens', title: 'Proofing Ovens', summary: 'Custom proofing ovens for bakery and food processing applications.'),
   NavItem(slug: 'embedded-linux', title: 'Embedded Linux', summary: 'Linux-based embedded systems for various applications.'),
   NavItem(slug: 'iot', title: 'IoT', summary: 'Internet of Things solutions for smart connectivity.'),
-  NavItem(slug: 'rfid', title: 'RFID', summary: 'Radio Frequency Identification solutions for asset tracking.',imagePath:'assets/images/projects/rfid_hen_mat.webp', imageDescription: 'RFID leg band & RFID mat tracking poultry.'),
+  NavItem(slug: 'rfid', title: 'RFID', summary: 'Radio Frequency Identification solutions for asset tracking.',imagePath:'assets/images/projects/rfid_hen_mat.webp', imageDescription: 'RFID leg band & RFID mat tracking poultry.', cardDescription: 'RFID Solutions for Agriculture', cardImagePath: 'assets/images/projects/rfid_hen_mat.webp'),
   NavItem(slug: 'apps', title: 'Apps', summary: 'Custom mobile and web applications for businesses.'),
   NavItem(slug: 'other', title: 'Other', summary: 'Other technology projects and initiatives.'),
 ];

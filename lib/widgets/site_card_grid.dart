@@ -71,8 +71,10 @@ class SiteCardGrid extends StatelessWidget {
                           child: PortfolioCard(
                             title: item.title,
                             actionText: 'Explore ${item.title}',
-                            description: showSummary ? item.summary : null,
-                            imagePath: item.imagePath,
+                            imagePath: item.cardImagePath ?? item.imagePath,
+                            description: showSummary
+                                ? (item.cardDescription ?? item.summary)
+                                : null,
                             onTap: () => context.go(
                               item.route ?? '$routePrefix/${item.slug}',
                             ),
