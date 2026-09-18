@@ -136,6 +136,199 @@ ChatGPT Chat 1
 
 Flutter Windows rendering currently encounters repeated EGL context-loss errors while resizing the application window with Impeller enabled:
 
-```text
 EGL Error: Context Lost (12302)
 Could not make the context current to acquire the frame.
+# Flutter PWA — Chat 2 Handoff
+
+## Project and working method
+
+- Repository: `AllyTechEngineering/allytechllc`
+- Local project: `C:\Developer\allytechllc`
+- The site is a Flutter PWA hosted with Firebase.
+- I provide code in the chat. You copy it into your files, review it, and check its look, feel, and navigation.
+- We work one step at a time. You asked me not to run tests.
+- You are preparing the final text and images yourself.
+
+## Windows debugging without Impeller
+
+Run the Windows app in debug mode with:
+
+```powershell
+flutter run -d windows --no-enable-impeller
+```
+
+Alternatively, use this entry in `.vscode/launch.json`, select it in VS Code, and press **F5**:
+
+```json
+{
+  "name": "allytechllc (Windows debug, Impeller off)",
+  "request": "launch",
+  "type": "dart",
+  "flutterMode": "debug",
+  "deviceId": "windows",
+  "toolArgs": ["--no-enable-impeller"]
+}
+```
+
+This runs the Windows desktop app for layout checks, not the browser PWA.
+
+## Step 1: Shared responsive card layout
+
+`lib/widgets/site_card_grid.dart` provides the card layout for:
+
+- `HomeScreen`
+- `ServicesScreen`
+- `ProjectsScreen`
+
+It uses the existing `PortfolioCard`, limits content width to 1280 px, adjusts horizontal padding by viewport width, and chooses one to four columns based on available card width.
+
+You reported that it looked good from 350 px through full screen width.
+
+## Step 2: Shared detail-page layout
+
+`lib/widgets/site_detail_page.dart` provides the layout for service, project, About, and Privacy pages. Its inputs are:
+
+- `title`
+- `backRoute`
+- `backLabel`
+- `summary`
+- `imagePath`
+- `imageFit`
+- `imageDescription`
+- `sections`
+- `body`
+
+Only `title` is required. When no body or sections are supplied, the page displays “Content coming soon.”
+
+The service and project detail screens find the selected item by its `slug` and pass its data to `SiteDetailPage`. The optional image uses a 16:9 area. Use `BoxFit.contain` for a technical diagram that must remain fully visible.
+
+In `lib/utils/custom_app_theme.dart`, `bodyLarge` was changed to normal weight with a 1.4 line height, so paragraphs do not appear bold like headings:
+
+```dart
+bodyLarge: GoogleFonts.lato(
+  fontSize: 16.0,
+  fontWeight: FontWeight.normal,
+  color: appColorScheme.onSurface,
+  wordSpacing: 0.0,
+  height: 1.4,
+),
+```
+
+You reported that the detail pages rendered well.
+
+## Navigation issue found
+
+After opening a service or project detail page, switching to another navigation branch and returning could reopen the detail page instead of the full card list. `StatefulShellRoute` remembers each branch’s last location.
+
+The proposed fix in `lib/widgets/adapt_scaf.dart` is:
+
+```dart
+void _onDestinationSelected(int index) {
+  navigationShell.goBranch(
+    index,
+    initialLocation: true,
+  );
+}
+```
+
+Selecting **Services** or **Projects** should then return to that branch’s card list. You have not yet confirmed the result of this change in the chat.
+
+## Home: mixed featured services and projects
+
+Your Home page has six featured entries:
+
+| Featured item | Destination |
+|---|---|
+| Proofing Ovens | `/projects/proofing-ovens` |
+| Embedded Systems | `/services/embedded-systems` |
+| Embedded Linux | `/projects/embedded-linux` |
+| IoT | `/projects/iot` |
+| RFID | `/projects/rfid` |
+| Project Management | `/services/project-management` |
+
+These entries belong to two route groups, so one `routePrefix: '/services'` cannot route all six correctly. No additional screen is needed.
+
+The proposed solution is an optional `route` on `NavItem`. In `SiteCardGrid`, an explicit item route takes precedence over the list’s prefix:
+
+```dart
+onTap: () => context.go(
+  item.route ?? '$routePrefix/${item.slug}',
+),
+```
+
+Each Home featured item has its own explicit route. The regular Services and Projects lists continue using their respective `routePrefix` values.
+
+## Managing future text and images
+
+`lib/utils/site_content.dart` contains the `serviceItems` and `projectItems` lists. Each `NavItem` can hold the data for its detail page:
+
+```dart
+class NavItem {
+  const NavItem({
+    required this.slug,
+    required this.title,
+    this.route,
+    this.summary,
+    this.imagePath,
+    this.imageDescription,
+  });
+
+  final String slug;
+  final String title;
+  final String? route;
+  final String? summary;
+  final String? imagePath;
+  final String? imageDescription;
+}
+```
+
+For example, find this entry in `serviceItems`:
+
+```dart
+NavItem(slug: 'embedded-systems', title: 'Embedded Systems'),
+```
+
+When you have its introductory text, replace that one entry with:
+
+```dart
+NavItem(
+  slug: 'embedded-systems',
+  title: 'Embedded Systems',
+  summary: 'Your short introduction goes here.',
+),
+```
+
+You do not call `NavItem` separately. When `/services/embedded-systems` opens, `ServiceDetailScreen` finds the item by slug and passes its values to `SiteDetailPage`:
+
+```dart
+return SiteDetailPage(
+  title: item.title,
+  backRoute: '/services',
+  backLabel: 'Back to Services',
+  summary: item.summary,
+  imagePath: item.imagePath,
+  imageDescription: item.imageDescription,
+);
+```
+
+`ProjectDetailScreen` follows the same pattern with `/projects` and “Back to Projects.”
+
+Add an `imagePath` only after the image exists and is declared in `pubspec.yaml`. `imageDescription` describes the image for accessibility; it is not a visible caption.
+
+## Recommended detail-page structure
+
+| Service page | Project page |
+|---|---|
+| Back to Services | Back to Projects |
+| Title and short summary | Title and short summary |
+| Representative image | Project photograph or diagram |
+| What you do | Problem |
+| Technical capabilities | Your role and implementation |
+| Deliverables | Result |
+| Contact action | Related service or contact action |
+
+Use the same centered article style for both, with a 960 px maximum width. Keep technical descriptions factual and put normal text in Flutter widgets rather than baking it into images.
+
+## Current boundary
+
+Code was provided in the chat for you to paste. I did not run tests or upload code to GitHub. A GitHub review branch was created earlier, but no project code was uploaded to it.
