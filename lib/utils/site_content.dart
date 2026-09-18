@@ -12,6 +12,7 @@ class NavItem {
     this.imageDescription,
     this.cardDescription,
     this.cardImagePath,
+    this.detailParagraph,
   });
 
   final String slug;
@@ -22,22 +23,80 @@ class NavItem {
   final String? imageDescription;
   final String? cardDescription;
   final String? cardImagePath;
+  final String? detailParagraph;
 }
 
 const List<NavItem> serviceItems = [
-  NavItem(slug: 'app-development', title: 'App Development', summary: 'Cross-platform Mobile Apps for iOS, Android, Linux and Windows.'),
-  NavItem(slug: 'embedded-systems', title: 'Embedded Systems', summary: 'Design and development of embedded systems for various applications.'),
-  NavItem(slug: 'iot-iiot', title: 'IoT/IIoT', summary: 'Internet of Things and Industrial IoT solutions.'),
-  NavItem(slug: 'pwa-development', title: 'PWA Development', summary: 'Progressive Web App development for cross-platform compatibility.'),
-  NavItem(slug: 'schematic-pcb-design', title: 'Schematic & PCB Design', summary: 'Electronic circuit design and printed circuit board layout.'),
-  NavItem(slug: 'project-management', title: 'Project Management', summary: 'End-to-end project management services for technology initiatives.'),
+  NavItem(
+    slug: 'app-development',
+    title: 'App Development',
+    summary: 'Cross-platform Mobile Apps for iOS, Android, Linux and Windows.',
+  ),
+  NavItem(
+    slug: 'embedded-systems',
+    title: 'Embedded Systems',
+    summary:
+        'Design and development of embedded systems for various applications.',
+  ),
+  NavItem(
+    slug: 'iot-iiot',
+    title: 'IoT/IIoT',
+    summary: 'Internet of Things and Industrial IoT solutions.',
+  ),
+  NavItem(
+    slug: 'pwa-development',
+    title: 'PWA Development',
+    summary:
+        'Progressive Web App development for cross-platform compatibility.',
+  ),
+  NavItem(
+    slug: 'schematic-pcb-design',
+    title: 'Schematic & PCB Design',
+    summary: 'Electronic circuit design and printed circuit board layout.',
+  ),
+  NavItem(
+    slug: 'project-management',
+    title: 'Project Management',
+    summary:
+        'End-to-end project management services for technology initiatives.',
+  ),
 ];
 
 const List<NavItem> projectItems = [
-  NavItem(slug: 'proofing-ovens', title: 'Proofing Ovens', summary: 'Custom proofing ovens for bakery and food processing applications.'),
-  NavItem(slug: 'embedded-linux', title: 'Embedded Linux', summary: 'Linux-based embedded systems for various applications.'),
-  NavItem(slug: 'iot', title: 'IoT', summary: 'Internet of Things solutions for smart connectivity.'),
-  NavItem(slug: 'rfid', title: 'RFID', summary: 'Radio Frequency Identification solutions for asset tracking.',imagePath:'assets/images/projects/rfid_hen_mat.webp', imageDescription: 'RFID leg band & RFID mat tracking poultry.', cardDescription: 'RFID Solutions for Agriculture', cardImagePath: 'assets/images/projects/rfid_hen_mat.webp'),
-  NavItem(slug: 'apps', title: 'Apps', summary: 'Custom mobile and web applications for businesses.'),
-  NavItem(slug: 'other', title: 'Other', summary: 'Other technology projects and initiatives.'),
+  NavItem(
+    slug: 'proofing-ovens',
+    title: 'Proofing Ovens',
+    summary:
+        'Custom proofing ovens for bakery and food processing applications.',
+  ),
+  NavItem(
+    slug: 'embedded-linux',
+    title: 'Embedded Linux',
+    summary: 'Linux-based embedded systems for various applications.',
+  ),
+  NavItem(
+    slug: 'iot',
+    title: 'IoT',
+    summary: 'Internet of Things solutions for smart connectivity.',
+  ),
+  NavItem(
+    slug: 'rfid',
+    title: 'RFID',
+    summary: 'Radio Frequency Identification solutions for asset tracking.',
+    imagePath: 'assets/images/projects/rfid_hen_mat.webp',
+    imageDescription: 'RFID leg band & RFID mat tracking poultry.',
+    cardDescription: 'RFID Solutions for Agriculture',
+    cardImagePath: 'assets/images/projects/rfid_hen_mat.webp',
+    detailParagraph: 'Detailed information about RFID solutions for agricultural applications.',
+  ),
+  NavItem(
+    slug: 'apps',
+    title: 'Apps',
+    summary: 'Custom mobile and web applications for businesses.',
+  ),
+  NavItem(
+    slug: 'other',
+    title: 'Other',
+    summary: 'Other technology projects and initiatives.',
+  ),
 ];
