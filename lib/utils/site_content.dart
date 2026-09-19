@@ -1,33 +1,9 @@
 import '../models/detail_section.dart';
+import '../models/site_content_item.dart';
 
-class NavItem {
-  const NavItem({
-    required this.slug,
-    required this.title,
-    this.route,
-    this.summary,
-    this.imagePath,
-    this.imageDescription,
-    this.cardDescription,
-    this.cardImagePath,
-    this.detailParagraph,
-    this.detailSections = const [],
-  });
 
-  final String slug;
-  final String title;
-  final String? route;
-  final String? summary;
-  final String? imagePath;
-  final String? imageDescription;
-  final String? cardDescription;
-  final String? cardImagePath;
-  final String? detailParagraph;
-  final List<DetailSection> detailSections;
-}
-
-const List<NavItem> serviceItems = [
-  NavItem(
+const List<SiteContentItem> serviceItems = [
+  SiteContentItem(
     slug: 'app-development',
     title: 'App Development',
      route: '/services/app-development',
@@ -35,7 +11,7 @@ const List<NavItem> serviceItems = [
     detailParagraph:
         'I specialize in developing cross-platform mobile applications that run seamlessly on iOS, Android, Linux, and Windows. I leverage the latest technologies to create user-friendly and efficient apps tailored to your business needs.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'embedded-systems',
     title: 'Embedded Systems',
     route: '/services/embedded-systems',
@@ -44,7 +20,7 @@ const List<NavItem> serviceItems = [
     detailParagraph:
         'My expertise in embedded systems allows me to design and develop solutions for a wide range of applications, from consumer electronics to industrial automation. I focus on creating reliable and efficient embedded solutions that meet the specific requirements of my clients.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'iot-iiot',
     title: 'IoT/IIoT',
     route: '/services/iot-iiot',
@@ -52,7 +28,7 @@ const List<NavItem> serviceItems = [
     detailParagraph:
         'I provide comprehensive IoT and IIoT solutions that enable businesses to connect, monitor, and control devices and systems. My services include sensor integration, data analytics, and cloud connectivity to help you harness the power of the Internet of Things.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'pwa-development',
     title: 'PWA Development',
     route: '/services/pwa-development',
@@ -61,7 +37,7 @@ const List<NavItem> serviceItems = [
     detailParagraph:
         'I specialize in developing Progressive Web Apps (PWAs) that offer a native app-like experience on the web. Our PWAs are designed to be fast, reliable, and engaging, providing users with a seamless experience across different devices and platforms.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'schematic-pcb-design',
     title: 'Schematic & PCB Design',
     route: '/services/schematic-pcb-design',
@@ -69,7 +45,7 @@ const List<NavItem> serviceItems = [
     detailParagraph:
         'I offer schematic and PCB design services for electronic circuits. I focus on creating efficient and reliable designs that meet industry standards, ensuring optimal performance and manufacturability for your electronic products.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'project-management',
     title: 'Project Management',
     route: '/services/project-management',
@@ -80,8 +56,8 @@ const List<NavItem> serviceItems = [
   ),
 ];
 
-const List<NavItem> projectItems = [
-  NavItem(
+const List<SiteContentItem> projectItems = [
+  SiteContentItem(
     slug: 'proofing-ovens',
     title: 'Proofing Ovens',
     route: '/projects/proofing-ovens',
@@ -92,7 +68,7 @@ const List<NavItem> projectItems = [
     imageDescription:
         'Custom holding cabinet for hot food industry applications.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'embedded-linux',
     title: 'Embedded Linux',
     route: '/projects/embedded-linux',
@@ -100,7 +76,7 @@ const List<NavItem> projectItems = [
     detailParagraph:
         'I specialize in developing cross-platform embedded Linux solutions for a wide range of applications, from consumer electronics to industrial automation. I focus on creating reliable and efficient embedded solutions that meet the specific requirements of my clients.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'iot',
     title: 'IoT',
     route: '/projects/iot',
@@ -108,7 +84,7 @@ const List<NavItem> projectItems = [
     detailParagraph:
         'I provide comprehensive IoT solutions for smart connectivity, enabling seamless integration of devices and systems. My approach focuses on creating scalable and secure IoT infrastructures that drive innovation and efficiency for my clients.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'rfid',
     title: 'RFID',
     route: '/projects/rfid',
@@ -136,7 +112,7 @@ const List<NavItem> projectItems = [
       ),
     ],
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'apps',
     title: 'Sailing Race Computer',
     route: '/projects/apps',
@@ -148,7 +124,7 @@ const List<NavItem> projectItems = [
     detailParagraph:
         'I develop custom mobile and web applications tailored to the unique needs of businesses. My applications are designed to enhance user experience, streamline operations, and drive business growth through innovative technology solutions.',
   ),
-  NavItem(
+  SiteContentItem(
     slug: 'other',
     title: 'Other',
     route: '/projects/other',
