@@ -1,6 +1,4 @@
-// Single source of truth for the sub-items under Services and Projects.
-// Router, menu screens, and detail screens all read from these lists so
-// slug and title can never drift out of sync between files.
+import '../models/detail_section.dart';
 
 class NavItem {
   const NavItem({
@@ -13,6 +11,7 @@ class NavItem {
     this.cardDescription,
     this.cardImagePath,
     this.detailParagraph,
+    this.detailSections = const [],
   });
 
   final String slug;
@@ -24,6 +23,7 @@ class NavItem {
   final String? cardDescription;
   final String? cardImagePath;
   final String? detailParagraph;
+  final List<DetailSection> detailSections;
 }
 
 const List<NavItem> serviceItems = [
@@ -81,8 +81,9 @@ const List<NavItem> projectItems = [
     summary: 'Custom holding cabinets for hot food industry applications.',
     detailParagraph:
         'I have developed custom proofing ovens for the hot food industry, designed to maintain optimal temperature and humidity for food products. These ovens are built to meet the specific needs of food service providers, ensuring consistent quality and performance.',
-        imagePath: 'assets/images/projects/holding_2.webp',
-    imageDescription: 'Custom holding cabinet for hot food industry applications.', 
+    imagePath: 'assets/images/projects/holding_2.webp',
+    imageDescription:
+        'Custom holding cabinet for hot food industry applications.',
   ),
   NavItem(
     slug: 'embedded-linux',
@@ -108,6 +109,22 @@ const List<NavItem> projectItems = [
     cardImagePath: 'assets/images/projects/rfid_hen_mat.webp',
     detailParagraph:
         'Detailed information about RFID solutions for agricultural applications.',
+    detailSections: [
+      DetailSection(
+        imagePath: 'assets/images/projects/rfid_1.webp',
+        imageTitle: 'RFID Leg Band',
+        paragraph:
+            'RFID leg bands are used for tracking and monitoring poultry in agricultural settings. These bands provide a reliable and efficient way to manage livestock, ensuring accurate data collection and improved operational efficiency.',
+        imageDescription: 'RFID leg band for poultry tracking.',
+      ),
+      DetailSection(
+        imagePath: 'assets/images/projects/rfid_hen_mat.webp',
+        imageTitle: 'RFID Mat',
+        paragraph:
+            'RFID mats are used in conjunction with RFID leg bands to track the movement and behavior of poultry. These mats provide valuable insights into animal health and welfare, enabling farmers to make informed decisions about their livestock management practices.',
+        imageDescription: 'RFID mat for poultry tracking.',
+      ),
+    ],
   ),
   NavItem(
     slug: 'apps',

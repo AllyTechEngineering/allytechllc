@@ -19,6 +19,7 @@ class ServiceDetailScreen extends StatelessWidget {
       summary: item.summary,
       imagePath: item.imagePath,
       imageDescription: item.imageDescription,
+      sections: item.detailSections,
       body: item.detailParagraph == null
           ? null
           : Text(
