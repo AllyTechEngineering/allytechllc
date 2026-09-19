@@ -121,7 +121,7 @@ class SiteDetailPage extends StatelessWidget {
                 const SizedBox(height: 48),
               ],
 
-              if (body != null) body!,
+              if (sections.isEmpty && body != null) body!,
             ],
           ),
         ),
