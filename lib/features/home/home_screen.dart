@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
+import '../../models/site_content_item.dart';
 import '../../utils/site_content.dart';
 import '../../widgets/site_card_grid.dart';
 
-final List<NavItem> featuredItems = [
+final List<SiteContentItem> featuredItems = [
   projectItems.firstWhere((item) => item.slug == 'proofing-ovens'),
   serviceItems.firstWhere((item) => item.slug == 'embedded-systems'),
   projectItems.firstWhere((item) => item.slug == 'embedded-linux'),

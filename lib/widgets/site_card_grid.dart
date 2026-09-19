@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../utils/site_content.dart';
+import '../models/site_content_item.dart';
 import 'portfolio_card.dart';
 
 class SiteCardGrid extends StatelessWidget {
@@ -14,7 +13,7 @@ class SiteCardGrid extends StatelessWidget {
   });
 
   final String title;
-  final List<NavItem> items;
+  final List<SiteContentItem> items;
   final String routePrefix;
   final bool showSummary;
 
