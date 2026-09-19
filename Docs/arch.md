@@ -382,6 +382,170 @@ The file-lock issue is considered a development-environment issue rather than an
 
 ---
 
+Add the following section to `Docs/arch.md`. This documents the content workflow and the planned section-based design.
+
+
+## Service and Project Content Workflow
+
+Service and project content is separated from the widgets that display it.
+
+### Content Responsibilities
+
+The following files have distinct responsibilities:
+
+| File | Responsibility |
+|---|---|
+| `lib/utils/site_content.dart` | Defines the text, image paths, routes, and content sections for each service and project |
+| `lib/widgets/site_detail_page.dart` | Defines how service and project detail content is arranged and styled |
+| `lib/features/services/service_detail_screen.dart` | Finds the selected service and passes its content to `SiteDetailPage` |
+| `lib/features/projects/project_detail_screen.dart` | Finds the selected project and passes its content to `SiteDetailPage` |
+| `pubspec.yaml` | Registers local image asset directories |
+
+### Adding Content
+
+When adding or changing content for an existing service or project:
+
+1. Add the text and image paths to the appropriate item in `site_content.dart`.
+2. Add new image files under the appropriate `assets/images/` directory.
+3. Confirm that the asset directory is declared in `pubspec.yaml`.
+4. Verify that the service or project detail screen passes the required content to `SiteDetailPage`.
+5. Modify `site_detail_page.dart` only when the shared page layout must support a new type of content or presentation.
+
+Normal content changes should not require changes to routing or navigation.
+
+### Content Versus Presentation
+
+`site_content.dart` defines what appears on a page.
+
+Examples include:
+
+- Page title
+- Card description
+- Card image
+- Detail-page summary
+- Detail-page paragraphs
+- Detail-page images
+- Image accessibility descriptions
+
+`site_detail_page.dart` defines how the content appears.
+
+Examples include:
+
+- Maximum page width
+- Responsive padding
+- Text styles
+- Section spacing
+- Image aspect ratio
+- Image placement
+- Rounded corners
+- Back-navigation placement
+
+Do not place service-specific or project-specific wording directly inside `site_detail_page.dart`.
+
+### Section-Based Detail Content
+
+Detail pages should use an ordered list of content sections rather than accumulating fields such as:
+
+```dart
+secondParagraph
+thirdParagraph
+secondImagePath
+thirdImagePath
+```
+
+Each content section may contain:
+
+- An optional heading
+- An optional paragraph
+- An optional image
+- An image accessibility description
+- An image fit setting
+
+Conceptual model:
+
+```dart
+class DetailSection {
+  const DetailSection({
+    this.heading,
+    this.paragraph,
+    this.imagePath,
+    this.imageDescription,
+    this.imageFit = BoxFit.cover,
+  });
+
+  final String? heading;
+  final String? paragraph;
+  final String? imagePath;
+  final String? imageDescription;
+  final BoxFit imageFit;
+}
+```
+
+Each service or project can then define as many ordered sections as needed:
+
+```dart
+sections: [
+  DetailSection(
+    heading: 'Project Overview',
+    paragraph: 'Project overview text goes here.',
+  ),
+  DetailSection(
+    imagePath: 'assets/images/projects/example.webp',
+    imageDescription: 'Description of the project image.',
+  ),
+  DetailSection(
+    heading: 'Technical Implementation',
+    paragraph: 'Technical implementation text goes here.',
+  ),
+],
+```
+
+`SiteDetailPage` renders the sections in the order in which they appear.
+
+This allows new paragraphs and images to be added through `site_content.dart` without changing the shared detail-page layout for every content addition.
+
+### Image Rules
+
+Use:
+
+```dart
+BoxFit.cover
+```
+
+for photographs and other images where minor cropping is acceptable.
+
+Use:
+
+```dart
+BoxFit.contain
+```
+
+for:
+
+- Technical diagrams
+- System diagrams
+- Schematics
+- Images containing labels
+- Images that must remain completely visible
+
+Every informational image should include a useful accessibility description.
+
+### Design Rule
+
+Modify `site_detail_page.dart` only when introducing a genuinely new shared presentation requirement.
+
+Examples include:
+
+- A new type of content section
+- Side-by-side desktop content
+- Image captions
+- Specifications tables
+- Call-to-action sections
+- Video or document links
+
+Adding another normal paragraph or image to one service or project should require only a content change in `site_content.dart`.
+
+
 ## Architectural Principles
 
 1. Maintain one Flutter application for mobile, tablet, and desktop.

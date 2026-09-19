@@ -81,6 +81,8 @@ const List<NavItem> projectItems = [
     summary: 'Custom holding cabinets for hot food industry applications.',
     detailParagraph:
         'I have developed custom proofing ovens for the hot food industry, designed to maintain optimal temperature and humidity for food products. These ovens are built to meet the specific needs of food service providers, ensuring consistent quality and performance.',
+        imagePath: 'assets/images/projects/holding_2.webp',
+    imageDescription: 'Custom holding cabinet for hot food industry applications.', 
   ),
   NavItem(
     slug: 'embedded-linux',
@@ -100,7 +102,7 @@ const List<NavItem> projectItems = [
     slug: 'rfid',
     title: 'RFID',
     summary: 'Radio Frequency Identification solutions for asset tracking.',
-    imagePath: 'assets/images/projects/rfid_hen_mat.webp',
+    imagePath: 'assets/images/projects/rfid_1.webp',
     imageDescription: 'RFID leg band & RFID mat tracking poultry.',
     cardDescription: 'RFID Solutions for Agriculture',
     cardImagePath: 'assets/images/projects/rfid_hen_mat.webp',
@@ -111,10 +113,10 @@ const List<NavItem> projectItems = [
     slug: 'apps',
     title: 'Sailing Race Computer',
     summary: 'Custom mobile and web applications for businesses.',
-    imagePath: 'assets/images/projects/sailing_race_computer.webp',
+    imagePath: 'assets/images/projects/sailing_app_gps.webp',
     imageDescription: 'Sailing race computer for competitive sailing.',
     cardDescription: 'Sailing Race Computer',
-    cardImagePath: 'assets/images/projects/sailing_race_computer.webp',
+    cardImagePath: 'assets/images/projects/sailing_app_gps.webp',
     detailParagraph:
         'I develop custom mobile and web applications tailored to the unique needs of businesses. My applications are designed to enhance user experience, streamline operations, and drive business growth through innovative technology solutions.',
   ),
