@@ -98,6 +98,16 @@ Individual screens should primarily contain their own page content.
 
 ---
 
+---
+## Application Design Pattern
+
+The application uses a data-driven UI architecture with reusable presentation components.
+
+Service and project content is represented by structured Dart models and stored separately from the widgets that display it. Feature screens select the appropriate content and pass it to shared card-grid and detail-page widgets.
+
+This approach keeps content, navigation, and presentation responsibilities separate without introducing unnecessary business-logic or state-management layers.
+
+---
 ## Adaptive and Responsive Design
 
 The application must render correctly on:
