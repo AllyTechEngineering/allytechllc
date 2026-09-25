@@ -40,8 +40,53 @@ const List<SiteContentItem> serviceItems = [
     ],
   ),
   SiteContentItem(
+    slug: 'pwa-development',
+    title: 'IoT Web Development',
+    route: '/services/pwa-development',
+    summary:
+        'IoT Progressive Web App Development.',
+    detailParagraph:
+        'I design multi-tenant IoT progressive web apps that can be easily deployed and managed across different environments.',
+  imagePath: 'assets/images/services/web_dev/web_dev_end_user.webp',
+    imageDescription: 'IoT Web App Development',
+    detailSections: [
+      DetailSection(
+        imagePath:
+            'assets/images/services/web_dev/web_dev_req_planning.webp',
+        imageTitle: 'Requirements Engineering',
+        paragraph:
+            'I provide comprehensive requirements engineering services for IoT progressive web apps, ensuring that all functional and non-functional requirements are clearly defined and met. This includes conducting feasibility studies, creating detailed requirement specifications, and managing requirement changes throughout the development lifecycle.',
+        imageDescription: 'IoT Web App Requirements Engineering',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/web_dev/web_dev_main.webp',
+        imageTitle: 'System Architecture Design',
+        paragraph:
+            'I design scalable and secure system architectures for IoT progressive web apps, ensuring that the applications can handle high traffic and data loads while maintaining performance and reliability. This includes selecting appropriate technologies, designing data models, and implementing security best practices.',
+        imageDescription: 'IoT Web App System Architecture Design',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/web_dev/web_dev_code.webp',
+        imageTitle: 'Development and Deployment',
+        paragraph:
+            'I develop and deploy IoT progressive web apps using modern web technologies, ensuring that the applications are responsive, user-friendly, and compatible with various devices and browsers. I also provide ongoing maintenance and support to ensure that the applications remain up-to-date and secure.',
+        imageDescription: 'IoT Web App Development and Deployment Process',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/web_dev/web_dev_testing_launch.webp',
+        imageTitle: 'Testing and Launch',
+        paragraph:
+            'I conduct thorough testing of IoT progressive web apps to ensure that they meet performance, usability, and security standards. This includes functional testing, performance testing, and user acceptance testing. Once the applications are thoroughly tested, I assist with the launch and deployment process.',
+        imageDescription: 'IoT Web App Testing and Launch Process',
+      ),
+    ],
+  ),
+    SiteContentItem(
     slug: 'embedded-systems',
-    title: 'Embedded IoT',
+    title: 'Embedded IoT Development',
     route: '/services/embedded-systems',
     summary:
         'Design and development of embedded IoT systems for various applications.',
@@ -53,14 +98,14 @@ const List<SiteContentItem> serviceItems = [
       DetailSection(
         imagePath:
             'assets/images/services/emb_dev/embedded_systems_detail_1.webp',
-        imageTitle: 'Hardware Design',
+        imageTitle: 'Requirements Engineering',
         paragraph:
-            'I provide comprehensive hardware design services for embedded IoT systems, including schematic capture, PCB layout, and component selection. My designs are optimized for performance, reliability, and manufacturability.',
-        imageDescription: 'Embedded IoT Hardware Design Example',
+            'I provide comprehensive requirements engineering services for embedded IoT systems, ensuring that all functional and non-functional requirements are clearly defined and met. This includes conducting feasibility studies, creating detailed requirement specifications, and managing requirement changes throughout the development lifecycle.',
+        imageDescription: 'Embedded IoT Requirements Engineering Process',
       ),
       DetailSection(
         imagePath:
-            'assets/images/services/emb_dev/embedded_systems_detail_2.webp',
+            'assets/images/services/emb_dev/embedded_systems_detail_3.webp',
         imageTitle: 'Firmware Development',
         paragraph:
             'I develop custom firmware for embedded IoT systems, ensuring that the software is optimized for the specific hardware and application requirements. My firmware development process includes testing and validation to ensure reliable operation.',
@@ -68,7 +113,7 @@ const List<SiteContentItem> serviceItems = [
       ),
       DetailSection(
         imagePath:
-            'assets/images/services/emb_dev/embedded_systems_detail_3.webp',
+            'assets/images/services/emb_dev/embedded_systems_detail_2.webp',
         imageTitle: 'System Integration',
         paragraph:
             'I provide system integration services for embedded IoT solutions, ensuring that all components work together seamlessly. This includes integrating sensors, actuators, communication modules, and cloud services to create a complete IoT solution.',
@@ -77,38 +122,69 @@ const List<SiteContentItem> serviceItems = [
     ],
   ),
   SiteContentItem(
-    slug: 'iot-iiot',
-    title: 'IoT/IIoT',
-    route: '/services/iot-iiot',
-    summary: 'Internet of Things and Industrial IoT solutions.',
-    detailParagraph:
-        'I provide comprehensive IoT and IIoT solutions that enable businesses to connect, monitor, and control devices and systems. My services include sensor integration, data analytics, and cloud connectivity to help you harness the power of the Internet of Things.',
-  ),
-  SiteContentItem(
-    slug: 'pwa-development',
-    title: 'PWA Development',
-    route: '/services/pwa-development',
-    summary:
-        'Progressive Web App development for cross-platform compatibility.',
-    detailParagraph:
-        'I specialize in developing Progressive Web Apps (PWAs) that offer a native app-like experience on the web. Our PWAs are designed to be fast, reliable, and engaging, providing users with a seamless experience across different devices and platforms.',
-  ),
-  SiteContentItem(
     slug: 'schematic-pcb-design',
     title: 'Schematic & PCB Design',
     route: '/services/schematic-pcb-design',
     summary: 'Electronic circuit design and printed circuit board layout.',
     detailParagraph:
         'I offer schematic and PCB design services for electronic circuits. I focus on creating efficient and reliable designs that meet industry standards, ensuring optimal performance and manufacturability for your electronic products.',
+  imagePath: 'assets/images/services/sch_pcb_dev/sch_pcb_dev_sch.webp',
+    imageDescription: 'Schematic and PCB Design Overview',
+    detailSections: [
+      DetailSection(
+        imagePath:
+            'assets/images/services/sch_pcb_dev/sch_pcb_dev_bom.webp',
+        imageTitle: 'Bill of Materials',
+        paragraph:
+            'I provide a comprehensive Bill of Materials (BOM) for each schematic and PCB design, detailing all components and their specifications. This ensures that the manufacturing process is smooth and efficient.',
+        imageDescription: 'Bill of Materials for PCB Design',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/sch_pcb_dev/sch_pcb_dev_test.webp',
+        imageTitle: 'Testing and Validation',
+        paragraph:
+            'I conduct thorough testing and validation of the designed PCBs to ensure they meet performance and reliability standards. This includes functional testing, signal integrity analysis, and environmental stress testing.',
+        imageDescription: 'Testing and Validation of PCB Design',
+      ),
+    ],  
   ),
   SiteContentItem(
     slug: 'project-management',
     title: 'Project Management',
     route: '/services/project-management',
     summary:
-        'End-to-end project management services for technology initiatives.',
+        'IoT NPD Project Management Services',
     detailParagraph:
-        'I provide comprehensive project management services for technology initiatives, ensuring that projects are completed on time, within budget, and to the highest quality standards. My approach includes planning, execution, monitoring, and closing of projects, with a focus on delivering value to stakeholders.',
+        'I provide specialized project management services for IoT new product development (NPD) projects. My approach focuses on effective planning, risk management, and stakeholder communication to ensure successful project outcomes.',
+  imagePath: 'assets/images/services/npd_pm/npd_pm_main.webp',
+    imageDescription: 'IoT NPD Project Management',
+    detailSections: [
+      DetailSection(
+        imagePath:
+            'assets/images/services/npd_pm/npd_pm_planning.webp',
+        imageTitle: 'Planning and Scheduling',
+        paragraph:
+            'Running an IoT NPD project requires careful planning and scheduling to ensure that all tasks are completed on time and within budget. I create detailed project plans, timelines, and resource allocation strategies to keep the project on track.',
+        imageDescription: 'Project Planning and Scheduling Process',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/npd_pm/npd_pm_sprint.webp',
+        imageTitle: 'Agile Project Management',
+        paragraph:
+            'I employ agile methodologies to manage IoT NPD projects, enabling iterative development, continuous feedback, and rapid adaptation to changing requirements.',
+        imageDescription: 'Agile Project Management in IoT NPD',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/services/npd_pm/npd_pm_gantt.webp',
+        imageTitle: 'Waterfall Project Management',
+        paragraph:
+            'Often a hybrid approach is used, combining agile and waterfall methodologies to suit the specific needs of the IoT NPD project. I create Gantt charts and detailed project documentation to ensure clarity and alignment among all stakeholders.',
+        imageDescription: 'Hybrid Project Management Approach for IoT NPD',
+      ),
+    ],
   ),
 ];
 

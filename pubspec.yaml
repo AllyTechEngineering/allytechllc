@@ -83,6 +83,18 @@ flutter:
      - assets/images/services/emb_dev/embedded_systems_detail_1.webp
      - assets/images/services/emb_dev/embedded_systems_detail_2.webp
      - assets/images/services/emb_dev/embedded_systems_detail_3.webp
+     - assets/images/services/sch_pcb_dev/sch_pcb_dev_sch.webp
+     - assets/images/services/sch_pcb_dev/sch_pcb_dev_bom.webp
+     - assets/images/services/sch_pcb_dev/sch_pcb_dev_test.webp
+     - assets/images/services/web_dev/web_dev_main.webp
+     - assets/images/services/web_dev/web_dev_req_planning.webp
+     - assets/images/services/web_dev/web_dev_code.webp
+     - assets/images/services/web_dev/web_dev_end_user.webp
+     - assets/images/services/web_dev/web_dev_testing_launch.webp
+     - assets/images/services/npd_pm/npd_pm_main.webp
+     - assets/images/services/npd_pm/npd_pm_planning.webp
+     - assets/images/services/npd_pm/npd_pm_sprint.webp
+     - assets/images/services/npd_pm/npd_pm_gantt.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
