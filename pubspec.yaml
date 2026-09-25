@@ -75,6 +75,14 @@ flutter:
      - assets/images/projects/rfid_1.webp
      - assets/images/projects/sailing_app_gps.webp
      - assets/images/projects/holding_2.webp
+     - assets/images/services/app_dev/app_dev_main_image_2.webp
+     - assets/images/services/app_dev/app_dev_system_connections.webp
+     - assets/images/services/app_dev/app_dev_system_connections_1.webp
+     - assets/images/services/app_dev/app_dev_system_connections_2.webp
+     - assets/images/services/emb_dev/embedded_systems_main.webp
+     - assets/images/services/emb_dev/embedded_systems_detail_1.webp
+     - assets/images/services/emb_dev/embedded_systems_detail_2.webp
+     - assets/images/services/emb_dev/embedded_systems_detail_3.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
