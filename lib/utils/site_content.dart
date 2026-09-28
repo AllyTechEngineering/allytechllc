@@ -202,41 +202,34 @@ const List<SiteContentItem> projectItems = [
   ),
   SiteContentItem(
     slug: 'embedded-linux',
-    title: 'Embedded Linux',
+    title: 'Flutter/Dart Embedded Linux',
     route: '/projects/embedded-linux',
-    summary: 'Single Codebase for Embedded',
+    summary: 'Embedded Linux',
+    imagePath: 'assets/images/projects/emb_linux/emb_linux_main.webp',
+    imageDescription: 'Embedded Linux Development Overview',
     detailParagraph:
-        'I specialize in developing cross-platform embedded Linux solutions for a wide range of applications, from consumer electronics to industrial automation. I focus on creating reliable and efficient embedded solutions that meet the specific requirements of my clients.',
+        'I specialize in developing embedded Linux solutions using Flutter and Dart. My expertise includes creating custom applications, optimizing performance, and ensuring seamless integration with hardware components for a wide range of embedded systems.',
   ),
-  SiteContentItem(
-    slug: 'iot',
-    title: 'IoT',
-    route: '/projects/iot',
-    summary: 'Internet of Things solutions for smart connectivity.',
-    detailParagraph:
-        'I provide comprehensive IoT solutions for smart connectivity, enabling seamless integration of devices and systems. My approach focuses on creating scalable and secure IoT infrastructures that drive innovation and efficiency for my clients.',
-  ),
+
   SiteContentItem(
     slug: 'rfid',
-    title: 'RFID',
+    title: 'IoT Connected RFID',
     route: '/projects/rfid',
-    summary: 'Radio Frequency Identification solutions for asset tracking.',
-    imagePath: 'assets/images/projects/rfid_1.webp',
+    summary: 'IoT Connected RFID Solutions',
+    imagePath: 'assets/images/projects/iot_rfid/rfid_hen_mat.webp',
     imageDescription: 'RFID leg band & RFID mat tracking poultry.',
-    cardDescription: 'RFID Solutions for Agriculture',
-    cardImagePath: 'assets/images/projects/rfid_hen_mat.webp',
     detailParagraph:
-        'Detailed information about RFID solutions for agricultural applications.',
+        'Connected IoT and RFID solutions for tracking and monitoring for industrial, consumer, medical and agricultural settings. I design and implement systems that utilize IoT connected RFID technology to provide accurate data collection and improve operational efficiency for asset management.',
     detailSections: [
       DetailSection(
-        imagePath: 'assets/images/projects/rfid_1.webp',
+        imagePath: 'assets/images/projects/iot_rfid/rfid_1.webp',
         imageTitle: 'RFID Leg Band',
         paragraph:
             'RFID leg bands are used for tracking and monitoring poultry in agricultural settings. These bands provide a reliable and efficient way to manage livestock, ensuring accurate data collection and improved operational efficiency.',
         imageDescription: 'RFID leg band for poultry tracking.',
       ),
       DetailSection(
-        imagePath: 'assets/images/projects/rfid_hen_mat.webp',
+        imagePath: 'assets/images/projects/iot_rfid/rfid_hen_mat.webp',
         imageTitle: 'RFID Mat',
         paragraph:
             'RFID mats are used in conjunction with RFID leg bands to track the movement and behavior of poultry. These mats provide valuable insights into animal health and welfare, enabling farmers to make informed decisions about their livestock management practices.',
@@ -255,13 +248,5 @@ const List<SiteContentItem> projectItems = [
     cardImagePath: 'assets/images/projects/sailing_app_gps.webp',
     detailParagraph:
         'I develop custom mobile and web applications tailored to the unique needs of businesses. My applications are designed to enhance user experience, streamline operations, and drive business growth through innovative technology solutions.',
-  ),
-  SiteContentItem(
-    slug: 'other',
-    title: 'Other',
-    route: '/projects/other',
-    summary: 'Other technology projects and initiatives.',
-    detailParagraph:
-        'I work on various technology projects and initiatives that don\'t fit into the other categories. These projects often involve exploring new technologies or addressing unique challenges faced by my clients.',
   ),
 ];
