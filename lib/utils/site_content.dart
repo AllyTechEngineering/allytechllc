@@ -208,14 +208,14 @@ const List<SiteContentItem> projectItems = [
     imagePath: 'assets/images/projects/emb_linux/emb_linux_main.webp',
     imageDescription: 'Embedded Linux Development Overview',
     detailParagraph:
-        'I specialize in developing embedded Linux solutions using Flutter and Dart. My expertise includes creating custom applications, optimizing performance, and ensuring seamless integration with hardware components for a wide range of embedded systems.',
+        'I develop Flutter and Dart applications for embedded Linux systems, integrating the user interface and application software with the underlying hardware platform.',
  detailSections: [
       DetailSection(
         imagePath:
             'assets/images/projects/emb_linux/emb_linux_1.webp',
         imageTitle: 'Embedded Linux System Architecture',
         paragraph:
-            'I design and implement embedded Linux system architectures that are tailored to the specific requirements of each project. This includes selecting appropriate hardware, configuring the operating system, and developing custom applications to meet the needs of the end-users.',
+            'I develop embedded Linux solutions by integrating the hardware platform, Linux operating system, and Flutter/Dart application to meet the requirements of the product.',
         imageDescription: 'Embedded Linux System Architecture Overview',
       ),
       DetailSection(
@@ -223,7 +223,7 @@ const List<SiteContentItem> projectItems = [
             'assets/images/projects/emb_linux/emb_linux_2.webp',
         imageTitle: 'Flutter/Dart Application Development',
         paragraph:
-            'I develop cross-platform applications using Flutter and Dart for embedded Linux systems. These applications are designed to provide a seamless user experience, with intuitive interfaces and responsive performance.',
+            'I integrate and test the Flutter/Dart application with the embedded Linux hardware platform and connected devices, validating system functionality and user-interface operation.',
         imageDescription: 'Flutter/Dart Application Development for Embedded Linux',
       ),
       DetailSection(
