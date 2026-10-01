@@ -96,6 +96,9 @@ flutter:
      - assets/images/services/npd_pm/npd_pm_sprint.webp
      - assets/images/services/npd_pm/npd_pm_gantt.webp
      - assets/images/projects/emb_linux/emb_linux_main.webp
+     - assets/images/projects/emb_linux/emb_linux_1.webp
+     - assets/images/projects/emb_linux/emb_linux_2.webp
+     - assets/images/projects/emb_linux/emb_linux_3.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -209,6 +209,32 @@ const List<SiteContentItem> projectItems = [
     imageDescription: 'Embedded Linux Development Overview',
     detailParagraph:
         'I specialize in developing embedded Linux solutions using Flutter and Dart. My expertise includes creating custom applications, optimizing performance, and ensuring seamless integration with hardware components for a wide range of embedded systems.',
+ detailSections: [
+      DetailSection(
+        imagePath:
+            'assets/images/projects/emb_linux/emb_linux_1.webp',
+        imageTitle: 'Embedded Linux System Architecture',
+        paragraph:
+            'I design and implement embedded Linux system architectures that are tailored to the specific requirements of each project. This includes selecting appropriate hardware, configuring the operating system, and developing custom applications to meet the needs of the end-users.',
+        imageDescription: 'Embedded Linux System Architecture Overview',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/projects/emb_linux/emb_linux_2.webp',
+        imageTitle: 'Flutter/Dart Application Development',
+        paragraph:
+            'I develop cross-platform applications using Flutter and Dart for embedded Linux systems. These applications are designed to provide a seamless user experience, with intuitive interfaces and responsive performance.',
+        imageDescription: 'Flutter/Dart Application Development for Embedded Linux',
+      ),
+      DetailSection(
+        imagePath:
+            'assets/images/projects/emb_linux/emb_linux_3.webp',
+        imageTitle: 'Hardware Integration and Testing',
+        paragraph:
+            'I perform hardware integration and testing to ensure that the embedded Linux solutions work seamlessly with the connected hardware components. This includes validating functionality, performance, and reliability under various operating conditions.',
+        imageDescription: 'Hardware Integration and Testing for Embedded Linux Solutions',
+      ),
+    ],
   ),
 
   SiteContentItem(
