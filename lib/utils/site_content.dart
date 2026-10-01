@@ -1,12 +1,11 @@
 import '../models/detail_section.dart';
 import '../models/site_content_item.dart';
 
-
 const List<SiteContentItem> serviceItems = [
   SiteContentItem(
     slug: 'app-development',
     title: 'IoT App Development',
-     route: '/services/app-development',
+    route: '/services/app-development',
     summary: 'Connected Cross-platform Mobile Apps',
     detailParagraph:
         'I specialize in developing cross-platform mobile applications that seamlessly connect with IoT devices. My apps are designed to provide users with a smooth and intuitive experience, enabling them to monitor and control their connected devices from anywhere.',
@@ -43,40 +42,35 @@ const List<SiteContentItem> serviceItems = [
     slug: 'pwa-development',
     title: 'IoT Web Development',
     route: '/services/pwa-development',
-    summary:
-        'IoT Progressive Web App Development.',
+    summary: 'IoT Progressive Web App Development.',
     detailParagraph:
         'I design multi-tenant IoT progressive web apps that can be easily deployed and managed across different environments.',
-  imagePath: 'assets/images/services/web_dev/web_dev_end_user.webp',
+    imagePath: 'assets/images/services/web_dev/web_dev_end_user.webp',
     imageDescription: 'IoT Web App Development',
     detailSections: [
       DetailSection(
-        imagePath:
-            'assets/images/services/web_dev/web_dev_req_planning.webp',
+        imagePath: 'assets/images/services/web_dev/web_dev_req_planning.webp',
         imageTitle: 'Requirements Engineering',
         paragraph:
             'I provide comprehensive requirements engineering services for IoT progressive web apps, ensuring that all functional and non-functional requirements are clearly defined and met. This includes conducting feasibility studies, creating detailed requirement specifications, and managing requirement changes throughout the development lifecycle.',
         imageDescription: 'IoT Web App Requirements Engineering',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/web_dev/web_dev_main.webp',
+        imagePath: 'assets/images/services/web_dev/web_dev_main.webp',
         imageTitle: 'System Architecture Design',
         paragraph:
             'I design scalable and secure system architectures for IoT progressive web apps, ensuring that the applications can handle high traffic and data loads while maintaining performance and reliability. This includes selecting appropriate technologies, designing data models, and implementing security best practices.',
         imageDescription: 'IoT Web App System Architecture Design',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/web_dev/web_dev_code.webp',
+        imagePath: 'assets/images/services/web_dev/web_dev_code.webp',
         imageTitle: 'Development and Deployment',
         paragraph:
             'I develop and deploy IoT progressive web apps using modern web technologies, ensuring that the applications are responsive, user-friendly, and compatible with various devices and browsers. I also provide ongoing maintenance and support to ensure that the applications remain up-to-date and secure.',
         imageDescription: 'IoT Web App Development and Deployment Process',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/web_dev/web_dev_testing_launch.webp',
+        imagePath: 'assets/images/services/web_dev/web_dev_testing_launch.webp',
         imageTitle: 'Testing and Launch',
         paragraph:
             'I conduct thorough testing of IoT progressive web apps to ensure that they meet performance, usability, and security standards. This includes functional testing, performance testing, and user acceptance testing. Once the applications are thoroughly tested, I assist with the launch and deployment process.',
@@ -84,7 +78,7 @@ const List<SiteContentItem> serviceItems = [
       ),
     ],
   ),
-    SiteContentItem(
+  SiteContentItem(
     slug: 'embedded-systems',
     title: 'Embedded IoT Development',
     route: '/services/embedded-systems',
@@ -92,7 +86,7 @@ const List<SiteContentItem> serviceItems = [
         'Design and development of embedded IoT systems for various applications.',
     detailParagraph:
         'My expertise in embedded IoT systems allows me to design and develop solutions for a wide range of applications, from consumer electronics to industrial automation. I focus on creating reliable and efficient embedded solutions that meet the specific requirements of my clients.',
-      imagePath: 'assets/images/services/emb_dev/embedded_systems_main.webp',
+    imagePath: 'assets/images/services/emb_dev/embedded_systems_main.webp',
     imageDescription: 'Embedded IoT System Overview',
     detailSections: [
       DetailSection(
@@ -128,57 +122,51 @@ const List<SiteContentItem> serviceItems = [
     summary: 'Electronic circuit design and printed circuit board layout.',
     detailParagraph:
         'I offer schematic and PCB design services for electronic circuits. I focus on creating efficient and reliable designs that meet industry standards, ensuring optimal performance and manufacturability for your electronic products.',
-  imagePath: 'assets/images/services/sch_pcb_dev/sch_pcb_dev_sch.webp',
+    imagePath: 'assets/images/services/sch_pcb_dev/sch_pcb_dev_sch.webp',
     imageDescription: 'Schematic and PCB Design Overview',
     detailSections: [
       DetailSection(
-        imagePath:
-            'assets/images/services/sch_pcb_dev/sch_pcb_dev_bom.webp',
+        imagePath: 'assets/images/services/sch_pcb_dev/sch_pcb_dev_bom.webp',
         imageTitle: 'Bill of Materials',
         paragraph:
             'I provide a comprehensive Bill of Materials (BOM) for each schematic and PCB design, detailing all components and their specifications. This ensures that the manufacturing process is smooth and efficient.',
         imageDescription: 'Bill of Materials for PCB Design',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/sch_pcb_dev/sch_pcb_dev_test.webp',
+        imagePath: 'assets/images/services/sch_pcb_dev/sch_pcb_dev_test.webp',
         imageTitle: 'Testing and Validation',
         paragraph:
             'I conduct thorough testing and validation of the designed PCBs to ensure they meet performance and reliability standards. This includes functional testing, signal integrity analysis, and environmental stress testing.',
         imageDescription: 'Testing and Validation of PCB Design',
       ),
-    ],  
+    ],
   ),
   SiteContentItem(
     slug: 'project-management',
     title: 'Project Management',
     route: '/services/project-management',
-    summary:
-        'IoT NPD Project Management Services',
+    summary: 'IoT NPD Project Management Services',
     detailParagraph:
         'I provide specialized project management services for IoT new product development (NPD) projects. My approach focuses on effective planning, risk management, and stakeholder communication to ensure successful project outcomes.',
-  imagePath: 'assets/images/services/npd_pm/npd_pm_main.webp',
+    imagePath: 'assets/images/services/npd_pm/npd_pm_main.webp',
     imageDescription: 'IoT NPD Project Management',
     detailSections: [
       DetailSection(
-        imagePath:
-            'assets/images/services/npd_pm/npd_pm_planning.webp',
+        imagePath: 'assets/images/services/npd_pm/npd_pm_planning.webp',
         imageTitle: 'Planning and Scheduling',
         paragraph:
             'Running an IoT NPD project requires careful planning and scheduling to ensure that all tasks are completed on time and within budget. I create detailed project plans, timelines, and resource allocation strategies to keep the project on track.',
         imageDescription: 'Project Planning and Scheduling Process',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/npd_pm/npd_pm_sprint.webp',
+        imagePath: 'assets/images/services/npd_pm/npd_pm_sprint.webp',
         imageTitle: 'Agile Project Management',
         paragraph:
             'I employ agile methodologies to manage IoT NPD projects, enabling iterative development, continuous feedback, and rapid adaptation to changing requirements.',
         imageDescription: 'Agile Project Management in IoT NPD',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/services/npd_pm/npd_pm_gantt.webp',
+        imagePath: 'assets/images/services/npd_pm/npd_pm_gantt.webp',
         imageTitle: 'Waterfall Project Management',
         paragraph:
             'Often a hybrid approach is used, combining agile and waterfall methodologies to suit the specific needs of the IoT NPD project. I create Gantt charts and detailed project documentation to ensure clarity and alignment among all stakeholders.',
@@ -209,30 +197,29 @@ const List<SiteContentItem> projectItems = [
     imageDescription: 'Embedded Linux Development Overview',
     detailParagraph:
         'I develop Flutter and Dart applications for embedded Linux systems, integrating the user interface and application software with the underlying hardware platform.',
- detailSections: [
+    detailSections: [
       DetailSection(
-        imagePath:
-            'assets/images/projects/emb_linux/emb_linux_1.webp',
+        imagePath: 'assets/images/projects/emb_linux/emb_linux_1.webp',
         imageTitle: 'Embedded Linux System Architecture',
         paragraph:
             'I develop embedded Linux solutions by integrating the hardware platform, Linux operating system, and Flutter/Dart application to meet the requirements of the product.',
         imageDescription: 'Embedded Linux System Architecture Overview',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/projects/emb_linux/emb_linux_2.webp',
+        imagePath: 'assets/images/projects/emb_linux/emb_linux_2.webp',
         imageTitle: 'Flutter/Dart Application Development',
         paragraph:
             'I integrate and test the Flutter/Dart application with the embedded Linux hardware platform and connected devices, validating system functionality and user-interface operation.',
-        imageDescription: 'Flutter/Dart Application Development for Embedded Linux',
+        imageDescription:
+            'Flutter/Dart Application Development for Embedded Linux',
       ),
       DetailSection(
-        imagePath:
-            'assets/images/projects/emb_linux/emb_linux_3.webp',
+        imagePath: 'assets/images/projects/emb_linux/emb_linux_3.webp',
         imageTitle: 'Hardware Integration and Testing',
         paragraph:
             'I perform hardware integration and testing to ensure that the embedded Linux solutions work seamlessly with the connected hardware components. This includes validating functionality, performance, and reliability under various operating conditions.',
-        imageDescription: 'Hardware Integration and Testing for Embedded Linux Solutions',
+        imageDescription:
+            'Hardware Integration and Testing for Embedded Linux Solutions',
       ),
     ],
   ),
