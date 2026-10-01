@@ -27,7 +27,7 @@ structure - Reusable presentation widgets - Feature screens
 
 ## 3. Project Structure
 
-``` text
+```
 lib/
 ├── features/
 │   ├── home/
@@ -52,13 +52,13 @@ Docs/
 
 Service and project content is maintained in:
 
-``` text
+```
 lib/utils/site_content.dart
 ```
 
 Content is represented using:
 
-``` text
+```
 SiteContentItem
 DetailSection
 ```
@@ -113,7 +113,7 @@ viewport width changes presentation only.
 
 Responsive behavior is based on available width.
 
-``` text
+```
 Mobile:   < 600 px
 Tablet:   600–1023 px
 Desktop:  >= 1024 px
@@ -151,7 +151,7 @@ structure.
 
 Current shared application-shell components include:
 
-``` text
+```
 lib/widgets/custom_app_bar.dart
 lib/widgets/adaptive_navigation.dart
 lib/widgets/adaptive_scaffold.dart
@@ -184,14 +184,14 @@ feature pages.
 
 Website imagery is stored under:
 
-``` text
+```
 assets/images/
 ```
 
 Service and project images are organized by content area and registered
 as Flutter assets in:
 
-``` text
+```
 pubspec.yaml
 ```
 
@@ -204,9 +204,32 @@ The Flutter web production build is deployed to Firebase Hosting.
 
 The public site uses:
 
-``` text
+```
 allytechllc.com
 ```
 
 Firebase configuration is maintained in the project repository for the
 deployed web application.
+
+## 14. Contact
+
+The contact feature is implemented as a persistent contact action within the shared application shell.
+
+The contact action uses Flutter's `FloatingActionButton`. Its presentation adapts to the available display width:
+
+- Desktop and tablet use an extended floating action button with a contact icon and `Contact` label.
+- Mobile uses a compact icon-only floating action button.
+
+Selecting the contact action opens a Material 3 modal dialog over the current page. No route change is required.
+
+The dialog contains:
+
+- Name
+- Email
+- Message
+- Cancel action
+- Send action
+
+The contact feature uses `url_launcher` to construct and launch a `mailto:` URI addressed to:
+
+`btaylor@allytechllc.com`
